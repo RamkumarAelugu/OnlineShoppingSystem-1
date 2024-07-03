@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer_register</title>
+    <link rel="stylesheet" href="cust_register.css">
+</head>
+<body>
+<div class="container">
+    <img class="ab" src="landingfinal.jpg" alt="image">
+    <div class="logoimg">
+        <img src="logoandname.png" alt="logo">
+    </div>
+    <div class="login"><h1><u>CUSTOMER REGISTER</u></h1>
+        <form id="creg_btn">
+            <label>Name:</label>
+            <input id="c_name" type="text" value="" placeholder="Enter name">
+            <label>Email:</label>
+            <input id="c_email" type="email" value="" placeholder="Enter Email id">
+            <label>Mobile:</label>
+            <input id="c_no" type="number" value="" placeholder="Enter mobile no">
+            <label>password:</label>
+            <input id="c_pass" type="password" value="" placeholder="Create new Password">
+            <label>Address:</label>
+            <input id="c_add" type="text" value="" placeholder="Enter your address">
+            <div class="btnsdiv">
+                <button type="submit">Register</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
+  <script>
+  let reg_btn=document.getElementById("creg_btn");
+  reg_btn.addEventListener("submit", function(){
+      window.location.href="shoping.html";
+    let ct_name=document.getElementById("c_name").value;
+    let ct_email=document.getElementById("c_email").value;
+    let ct_no=document.getElementById("c_no").value;
+    let ct_pass=document.getElementById("c_pass").value;
+    let ct_add=document.getElementById("c_add").value;
+    let cname_list=localStorage.getItem("cust_name")?JSON.parse(localStorage.getItem("cust_name")):[];
+    cname_list.push(ct_name);
+    localStorage.setItem("cust_name",JSON.stringify(cname_list));
+    let cmail_list=localStorage.getItem("cust_email")?JSON.parse(localStorage.getItem("cust_email")):[];
+    cmail_list.push(ct_email);
+    localStorage.setItem("cust_email",JSON.stringify(cmail_list));
+    let cno_list=localStorage.getItem("cust_no")?JSON.parse(localStorage.getItem("cust_no")):[];
+    cno_list.push(ct_no);
+    localStorage.setItem("cust_no",JSON.stringify(cno_list));
+    let cpass_list=localStorage.getItem("cust_pass")?JSON.parse(localStorage.getItem("cust_pass")):[];
+    cpass_list.push(ct_pass);
+    localStorage.setItem("cust_pass",JSON.stringify(cpass_list));
+    let cadd_list=localStorage.getItem("cust_add")?JSON.parse(localStorage.getItem("cust_add")):[];
+    cadd_list.push(ct_add);
+    localStorage.setItem("cust_add",JSON.stringify(cadd_list));
+    alert("Registration Successfully completed");
+  });
+  </script>
+</body>
+</html>

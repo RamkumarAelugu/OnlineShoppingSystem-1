@@ -1,0 +1,130 @@
+.items{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.items h1{
+    color:darkgoldenrod;
+    margin:10px auto;
+    border:4px inset rgb(41,47,99);
+    width:100%;
+    text-align: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding:10px ;
+    border-top: 2px outset rgb(251,193,245);
+    width: 96%;
+    margin: 2px;
+    border-bottom:2px outset rgb(251,193,245);
+    margin-right: -20px;
+}
+.categ{
+    display: none;
+}
+.card .line_sort{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.line_sort a img{
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    margin-left: 100px;
+}
+.card .details{
+    margin: 10px auto;
+}
+.line_sort .content h3,h4{
+    color: blue;
+    margin-right: 250px;
+}
+.line_sort .content p{
+    color: rgb(41,156,99);
+    margin-right: 300px;
+}
+#j13 .content{
+    margin-right: -30px;
+}
+#j5 .content{
+    margin-right: -50px;
+}
+#j4,#j12 .content{
+    margin-right: 10px;
+}
+#j5,#j15 .content{
+    margin-right: -50px;
+}
+#j7 .content{
+    margin-right: 80px;
+}
+#j9,#j11 .content{
+    margin-right: -10px;
+}
+#j10 .content{
+    margin-right: 40px;
+}
+#j4 .content{
+    margin-right: 10px;
+}
+#j14,#j17 .content{
+    margin-right: -60px;
+}
+#j14 .content{
+    margin-right: -60px;
+}
+#j16 .content{
+    margin-right: -60px;
+}
+#j3 .content{
+    margin-right: -30px;
+}
+#m7 .content{
+    margin-right: -25px;
+}
+#m6 .content{
+    margin-right: -48px;
+}
+#m5 .content{
+    margin-right: -45px;
+}
+#m4 .content{
+    margin-right: -15px;
+}
+#m3 .content{
+    margin-right: -25px;
+}
+.details a{
+    color: blue;
+}
+.content button{
+    width: 80px;
+    padding: 10px;
+    background-color: goldenrod;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: white;
+}
+.content button:hover{
+    transform:scale(0.8,0.8);
+    transition: all 0.5s;
+}
+@media (min-width:769px) and (max-width:1200px){
+  .line_sort .content p{
+    margin-right: 0;
+  }
+  .content{
+    margin-left: 100px;
+  }
+  #l1 .line_sort .content{
+    margin-right: 150px;
+  }
+  #l15 .content{
+    margin-right: 100px;
+  }
+}

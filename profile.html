@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>profile</title>
+  <style>
+    body{
+      margin:20px;
+      display:flex;
+      flex-direction:column; 
+    }
+  h2{
+    margin:10px;
+  }
+  .divpro{
+    display:flex;
+    flex-direction:row;
+    margin:10px;
+    border:2px outset blue;
+    padding:20px;
+    justify-content:space-evenly;
+    align-items:center;
+  }
+  .divpro img{
+    width:100px;
+    margin-left:-100px;
+  }
+  .od{
+    color:green;
+  }
+  #p_btn{
+    padding:10px;
+    background-color:blueviolet;
+    color:white;
+    margin-left:50px;
+    border-radius:5px;
+  }
+  #war{
+    padding:10px 20px;
+    color:white;
+    background-color:blueviolet;
+    font-weight:bolder;
+    border-radius:5px;
+    display:none;
+  }
+  #war:hover{
+    background-color:red;
+  }
+  #divp{
+    margin-left:-100px;
+  }
+  #divpro2{
+    display: none;
+  }
+  </style>
+</head>
+<body>
+<div>
+  <h1>Hello,<span id="pro_name"></span></h1>
+    <hr color="red">
+  <h2><span id="for">For</span> Your Orders!</h2>
+  <div id="divpro2" class="divpro">
+  <div>
+    <img id="imgh" src="" alt="img">
+  </div>
+  <div id="divp">
+    <h2 id="btn_ref"></h2>
+    <h2 id="pr"></h2>
+    <b><h2 class="od">Order placed</h2></b>
+    <b><h2 class="od">Delivered By wednesday!</h2></b>
+  </div>
+  <div>
+    <a href="https://maps.app.goo.gl/Q1r5piZJqUH8JL238"><button id="war">Warrenty<br>service</button></a>
+  </div>
+  </div>
+</div>
+  <script>
+  let name_p=JSON.parse(localStorage.getItem("cust_name"));
+  let c_index=JSON.parse(sessionStorage.getItem("index"));
+  let pro_name1=document.getElementById("pro_name");
+  pro_name1.innerText=name_p[c_index];
+  let pr_btn=function(){
+    document.getElementById("for").style.display="none";
+    let profile_p=JSON.parse(localStorage.getItem("pro_ele"));
+    let im=document.getElementById("imgh");
+    im.src=profile_p[c_index][0];
+    let nam=document.getElementById("btn_ref");
+    nam.innerText=profile_p[c_index][1];
+    let prf=document.getElementById("pr");
+    prf.innerText=profile_p[c_index][2];
+    document.getElementById("divpro2").style.display="flex";
+    let btn_refv=nam.innerText;
+    if(btn_refv==="VIVO"){
+      document.getElementById("war").style.display="block";
+    }
+    else if(btn_refv==="REDMI"){
+      document.getElementById("war").style.display="block";
+    }
+    else if(btn_refv==="OPPO"){
+      document.getElementById("war").style.display="block";
+    }
+    else if(btn_refv==="REALME"){
+      document.getElementById("war").style.display="block";
+    }
+    else if(btn_refv==="SAMSUNG"){
+      document.getElementById("war").style.display="block";
+    }
+    else if(btn_refv==="HP"){
+      document.getElementById("war").style.display="block";
+    }
+    else if(btn_refv==="DELL"){
+      document.getElementById("war").style.display="block";
+    }
+    else if(btn_refv==="LENOVO"){
+      document.getElementById("war").style.display="block";
+    }
+    else if(btn_refv==="APPLE"){
+      document.getElementById("war").style.display="block";
+    }
+    else if(btn_refv==="ASUS"){
+      document.getElementById("war").style.display="block";
+    }
+    else{
+      console.log("no warranty available");
+    }
+  };
+  pr_btn();
+</script>
+</body>
+</html>

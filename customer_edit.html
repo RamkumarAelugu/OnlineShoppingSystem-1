@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer_edit</title>
+    <link rel="stylesheet" href="cust_register.css">
+</head>
+<body>
+<div class="container">
+    <img class="ab" src="landingfinal.jpg" alt="image">
+    <div class="logoimg">
+        <img src="logoandname.png" alt="logo">
+    </div>
+    <div class="login"><h1><u>EDIT DETAILS</u></h1>
+        <form id="edit_form">
+            <label>Name:</label>
+            <input id="new_n" type="text" value="" required placeholder="Enter name">
+            <label>Email:</label>
+            <input id="new_e" type="email" value="" required placeholder="Enter Email id">
+            <label>Mobile:</label>
+            <input id="new_no" type="number" value="" required placeholder="Enter mobile no">
+
+            <label>Address:</label>
+            <input id="new_a" type="text" value="" required placeholder="Enter your address">
+            <div class="btnsdiv">
+                <button type="submit">UPDATE</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
+  <script>
+  let form_edit=document.getElementById("edit_form");
+  form_edit.addEventListener("submit",function(){
+      window.location.href="shoping.html";
+    let n_new=document.getElementById("new_n").value;
+    let e_new=document.getElementById("new_e").value;
+    let no_new=document.getElementById("new_no").value;
+    let a_new=document.getElementById("new_a").value;
+    let get_elist1=JSON.parse(localStorage.getItem("cust_email"));
+    let get_alist1=JSON.parse(localStorage.getItem("cust_add"));
+    let get_nlist1=JSON.parse(localStorage.getItem("cust_name"));
+    let get_nolist=JSON.parse(localStorage.getItem("cust_no"));
+    let cust_index=JSON.parse(sessionStorage.getItem("index"));
+    get_elist1[cust_index]=e_new;
+    get_nlist1[cust_index]=n_new;
+    get_nolist[cust_index]=no_new;
+    get_alist1[cust_index]=a_new;
+    localStorage.setItem("cust_email",JSON.stringify(get_elist1));
+    localStorage.setItem("cust_name",JSON.stringify(get_nlist1));
+    localStorage.setItem("cust_no",JSON.stringify(get_nolist));
+    localStorage.setItem("cust_add",JSON.stringify(get_alist1));
+    alert("Details Updated successfully!");
+  });
+  </script>  
+</body>
+</html>

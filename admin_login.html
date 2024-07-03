@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin_login</title>
+    <link rel="stylesheet" href="admin_login.css">
+</head>
+<body>
+    <div class="container">
+        <img class="ab" src="landingfinal.jpg" alt="image">
+        <div class="logoimg">
+            <img src="logoandname.png" alt="logo">
+        </div>
+        <div class="login"><h1><u>ADMIN LOGIN</u></h1>
+            <form id="ad_form">
+                <label>Username:</label>
+                <input id="ad_user" type="text" value="" placeholder="Enter Username" required>
+                <label>password:</label>
+                <input id="ad_pass" type="password" value="" placeholder="Enter Password" required>
+                <div class="btnsdiv">
+                    <button type="submit">login</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  <script>
+  let adm_form=document.getElementById("ad_form");
+  adm_form.addEventListener("submit", function(){
+      window.location.href="shoping.html";
+    let adm_user=document.getElementById("ad_user").value;
+    let adm_pass=document.getElementById("ad_pass").value;
+    if(adm_user==="shoppingcart" && adm_pass==="shoppingcart"){
+      let adm_addp="add_product.html";
+      sessionStorage.setItem("ad_ref",adm_addp);
+      alert("login successful");
+    }
+    else{
+      alert("invalid username or password");
+    }
+  });
+  </script>
+</body>
+</html>

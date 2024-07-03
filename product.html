@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product_onlineShopping</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        h1{
+            text-align: center;
+            width: 99%;
+            border: 3px inset rgb(41,156,99);
+            margin-left: 10px;
+        }
+        #total{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-top: 50px;
+            align-items: center;
+        }
+        #buy_btn{
+            padding: 10px 20px;
+            color: blueviolet;
+            text-shadow: 5px 5px 10px;
+            font-weight: bolder;
+            border: 3px inset blueviolet;
+            background-color: darkorange;
+            border-radius: 10px;
+        }
+        #buy_btn:hover{
+            border: 3px outset blueviolet;
+            transform: scale(0.8,0.8);
+            transition: all 0.5s;
+        }
+        h3,h4{
+            color: blue;
+            margin-right: 250px;
+        }
+        #para{
+            color: rgb(41, 156, 99);
+        }
+        #sub2{
+            padding: 20px 100px;
+            border-left: 2px inset blueviolet;
+            margin-right: 300px;
+        }
+        #info{
+            color:rgb(41, 156, 99);
+            margin-bottom: 20px;
+        }
+        #rating img{
+            width: 250px;
+            margin-bottom: 20px;
+        }
+        th,td {
+            border: 1px solid blueviolet;
+            padding: 5px;
+        }
+        table{
+            border: 2px outset deeppink;
+        }
+        th{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>PRODUCT DETAILS</h1>
+    </div>
+    <div id="total">
+        <div id="sub1">
+            <img id="prd_img" src="clothes/d5.jpg" alt="image">
+        </div>
+        <div id="sub2">
+            <div id="sub3">
+                <h3 id="heading">Clothestic</h3>
+                <p id="para">Leriya Fashion Shirt for Men | Tropical Leaf Printed Rayon Shirts for Men |<br> Preppy Short Sleeves | Spread Collared Neck |<br> Perfect for Outing | Beach | Camp Wear Shirt for Boys</p>
+                <p id="para2">Design:<br>Ethnic motifs printed , Straight shape , Regular style , Round neck, <br>three-quarter regular sleeves , length with straight hem
+                    Polyester machine weave fabric<br>
+                    Trousers design:<br>
+                    Printed Trousers<br>
+                    Drawstring closure<br>
+                    Size & Fit<br>
+                    Size worn by the model: xxl<br>
+                    Chest: 44''<br>
+                    Waist: 42''<br>
+                    Hips: 46''<br>
+                    Height: 5.4</p>
+                <h4 id="cost">price : rs 439/-</h4>
+            </div>
+            <div id="info">
+                <table>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Item</td>
+                        <td>clothes</td>
+                    </tr>
+                    <tr>
+                        <td>Fabric</td>
+                        <td>cotton</td>
+                    </tr>
+                    <tr>
+                        <td>Stretchability</td>
+                        <td>medium</td>
+                    </tr>
+                    <tr>
+                        <td>Washing temp</td>
+                        <td>medium</td>
+                    </tr>
+                    <tr>
+                        <td>Washing type</td>
+                        <td>dry cleaning</td>
+                    </tr>
+                    <tr>
+                        <td>Moisture-wicking</td>
+                        <td>high</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="rating">
+                <img src="review.jpg" alt="rating">
+            </div>
+            <div >
+                <button id="buy_btn" >BUY NOW</button>
+            </div>
+        </div>
+    </div>
+<script>
+    let display_prd=function(){
+        let img_src=document.getElementById("prd_img");
+        img_src.src=JSON.parse(localStorage.getItem("img_src2"));
+        let brand_name=document.getElementById("heading");
+        brand_name.innerText=JSON.parse(localStorage.getItem("brandf2"));
+        let para=document.getElementById("para");
+        para.innerText=JSON.parse(localStorage.getItem("paraf2"));
+        let para2=document.getElementById("para2");
+        let cost=document.getElementById("cost");
+        cost.innerText= JSON.parse(localStorage.getItem("pricef2"));
+        let info=document.getElementById("info");
+        let camp_f=JSON.parse(localStorage.getItem("id_s2"));
+        if(camp_f==="footware")
+        {
+            para2.innerHTML=`Full length insoles for added comfort<br>
+                            Padded tongue<br>
+                            SRC-rated for excellent resistance<br>
+                            Dual density PU sole<br>
+                            Steel midsole<br>
+                            Scuff cap<br>
+                            EN ISO 20345:2011 S3 SRC<br>
+                            PRODUCT SPECIFICATION<br>
+                            Footwear Style	Ankle<br>
+                            Slip Resistance	SRC<br>
+                            Slip Rating	S3<br>
+                            Footwear Features	Anti-Static, Midsole<br>
+                            Box Quantity	1<br>
+                            Colour	Black<br>
+                            Size	3<br>`;
+            info.innerHTML = `<table>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Item</td>
+                        <td>footware</td>
+                    </tr>
+                    <tr>
+                        <td>Nature</td>
+                        <td>water proof</td>
+                    </tr>
+                    <tr>
+                        <td>Fabric</td>
+                        <td>leather</td>
+                    </tr>
+                    <tr>
+                        <td>Closure type</td>
+                        <td>lace up</td>
+                    </tr>
+                    <tr>
+                        <td>Heal type</td>
+                        <td>flat</td>
+                    </tr>
+                    <tr>
+                        <td>Moisture-wicking</td>
+                        <td>week</td>
+                    </tr>
+                </table>`;
+        }
+        else if(camp_f==="clothes")
+        {
+            para2.innerHTML=`Design:<br>
+        Ethnic motifs printed , Straight shape , Regular style , Round neck<br>
+        Trousers design:<br>
+        Printed Trousers<br>
+        Drawstring closure<br>
+        Size & Fit<br>
+        Size worn by the model: xxl<br>
+        Chest: 44''<br>
+        Waist: 42''<br>
+        Hips: 46''<br>
+        Height: 5.4";`
+            info.innerHTML = `<table>
+        <tr>
+            <th>Properties</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Item</td>
+            <td>clothes</td>
+        </tr>
+        <tr>
+            <td>Fabric</td>
+            <td>cotton</td>
+        </tr>
+        <tr>
+            <td>Stretchability</td>
+            <td>medium</td>
+        </tr>
+        <tr>
+            <td>Washing temp</td>
+            <td>medium</td>
+        </tr>
+        <tr>
+            <td>Washing type</td>
+            <td>dry cleaning</td>
+        </tr>
+        <tr>
+            <td>Moisture-wicking</td>
+            <td>high</td>
+        </tr>
+    </table>`;
+        }
+        else if(camp_f==="mobiles")
+        {
+            para2.innerHTML=`With a 33 W Powerful SUPERVOOC Charge, <br>30 minutes charge for 50% battery and<br> full charge in 70 minutes,<br>5000mAh massive battery, without ever being concerned<br> about the battery running out
+            50MP Primary Camera,<br>street photography high-quality pictures that<br> catch every detail with astounding clarity<br>
+            Superior visual experience with the 17.07 cm (6.72) high resolution<br> with 90Hz ultra-high refresh rate,91.4% screen-to-body ratio<br> with punch-hole display,screen brightness upto 680 nits<br>
+            Witness stupendous speed and flawless multitasking with up to 12 GB<br> of dynamic RAM that provides a fluid and reactive user <br>experience, whether you're watching high-definition video,<br> playing graphics-intensive video games`;
+            info.innerHTML = `<table>
+            <tr>
+            <th>Properties</th>
+            <th>Value</th>
+            </tr>
+            <tr>
+            <td>OTG</td>
+            <td>supported</td>
+            </tr>
+            <tr>
+            <td>Water resistence</td>
+            <td>yes</td>
+            </tr>
+            <tr>
+            <td>Display</td>
+            <td>amoled</td>
+            </tr>
+            <tr>
+            <td>Camera</td>
+            <td>front & rear</td>
+            </tr>
+            <tr>
+            <td>Charging</td>
+            <td>C-type</td>
+            </tr>
+            <tr>
+            <td>Warranty</td>
+            <td>1 year</td>
+            </tr>
+            </table>`;
+        }
+        else if(camp_f==="watches")
+        {
+            para2.innerHTML=`Dial Color: Black | Case Color: Black; <br>Strap Type: 22mm Soft Silicone Black Strap<br>
+Case Material: IP Black Plated Brass Case<br>
+Package Contents: 1 Wrist Watch & Warranty Card<br>
+Warranty Summary: 1 Year Manufacturers warranty on all<br> the manufacturing defects including the machine movement.<br> Any damages due to wear and tear or mishandling<br> of the product are not covered under warranty.<br> The quartz movement is covered under warranty <br>but the cell is not covered under warranty.`;
+            info.innerHTML = `<table>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Item</td>
+                        <td>watches</td>
+                    </tr>
+                    <tr>
+                        <td>Warranty</td>
+                        <td>1 year</td>
+                    </tr>
+                    <tr>
+                        <td>Mechanism</td>
+                        <td>quartz</td>
+                    </tr>
+                    <tr>
+                        <td>Water resistant</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>Power</td>
+                        <td>battery</td>
+                    </tr>
+                    <tr>
+                        <td>Date display</td>
+                        <td>yes</td>
+                    </tr>
+                </table>`;
+        }
+        else if(camp_f==="laptops")
+        {
+            para2.innerHTML=`Software: Pre-Loaded Windows 11 Home with Lifetime Validity | <br>MS Office Home and Student 2021 with lifetime validity| <br>McAfee Multi-Device Security 15-month subscription<br>
+Display: 14.0 FHD WVA AG Narrow Border 250 nits <br>Graphics & Keyboard: Integrated Onboard Graphics & Standard Keyboard<br>
+Ports: 1 USB 3.2 Gen 1 Type-C port with DisplayPort 1.4<br>, 1 USB 3.2 Gen 1 port, 1 USB 2.0 port, 1 Headset jack,<br> 1 HDMI 1.4 port*,1 Flip-Down RJ-45 port 10/100/1000 Mbps,<br> 1 SD 3.0 card slot<br>
+Processor: Intel Core i3-1215U 12th Generation (up to 4.40 GHz,<br> 10MB, 6 Cores);RAM: 8 GB, 1 x 8 GB, DDR4, 2666 MHz,<br> (2 DIMM Slots, Expandable up to 16GB) Storage: 512GB SSD`;
+            info.innerHTML = `<table>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Item</td>
+                        <td>electronics</td>
+                    </tr>
+                    <tr>
+                        <td>Material</td>
+                        <td>plastic</td>
+                    </tr>
+                    <tr>
+                        <td>keyboard</td>
+                        <td>qwerty</td>
+                    </tr>
+                    <tr>
+                        <td>charging</td>
+                        <td>19v</td>
+                    </tr>
+                    <tr>
+                        <td>OS</td>
+                        <td>windows 10</td>
+                    </tr>
+                    <tr>
+                        <td>Warranty</td>
+                        <td>2 years</td>
+                    </tr>
+                </table>`;
+        }
+        else
+        {
+            para2.innerHTML=`PRODUCT DETAILS: The beautiful pendant and chain are <br>made of 925 Stamped sterling silver and is embellished<br> with AAA+ Shiny Zircon, Rhodium e-coated to prevent tarnish.<br> Chain Length: 16"+2" Adjustable.<br>
+PACKAGING & CARE INSTRUCTIONS : The necklace comes in a cute GIVA jewellery box <br>along with a GIVA jewellery kit which includes a soft <br>cleaning cloth for jewellery care . <br>Wipe your jewellery with the soft cloth after every use,<br> store it in a flat box to avoid accidental scratches.<br> Keep sprays and perfumes away from your jewellery,<br> do not soak it in water`;
+            info.innerHTML = `<table>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Item</td>
+                        <td>jewellery</td>
+                    </tr>
+                    <tr>
+                        <td>Material</td>
+                        <td>alloy</td>
+                    </tr>
+                    <tr>
+                        <td>water resistent</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>size</td>
+                        <td>16cm</td>
+                    </tr>
+                </table>`;
+        }
+    };
+    display_prd();
+    let buy_btn2=document.getElementById("buy_btn");
+    buy_btn2.addEventListener("click",function(){
+        window.location.href="profile.html";
+        let profile_list = localStorage.getItem("pro_ele") ? JSON.parse(localStorage.getItem("pro_ele")) : [];
+        profile_list=[["a","b","c"],["f","g","k"],["a","b","c"],["f","g","k"]];
+        let pro_index = JSON.parse(sessionStorage.getItem("index"));
+        let img9 = document.getElementById("prd_img").src;
+        let brd = document.getElementById("heading").innerText;
+        let cst = document.getElementById("cost").innerText;
+        profile_list[pro_index][0] = img9;
+        profile_list[pro_index][1] = brd;
+        profile_list[pro_index][2] = cst;
+        localStorage.setItem("pro_ele", JSON.stringify(profile_list));
+        alert("Order placed successfully!!");
+    });
+    </script>
+    <script src="shop.js"></script>
+    <script src="product.js"></script>
+</body>
+</html>

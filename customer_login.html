@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer_login</title>
+    <link rel="stylesheet" href="admin_login.css">
+</head>
+<body>
+<div class="container">
+    <img class="ab" src="landingfinal.jpg" alt="image">
+    <div class="logoimg">
+        <img src="logoandname.png" alt="logo">
+    </div>
+    <div class="login"><h1><u>CUSTOMER LOGIN</u></h1>
+        <form id="c_log">
+            <label>Email:</label>
+            <input id="mail" type="email" value="" placeholder="Enter Email id">
+            <label>password:</label>
+            <input id="pass" type="password" value="" placeholder="Enter Password">
+            <div class="btnsdiv">
+                <button type="submit">login</button>
+                <button type="reset">Reset</button>
+            </div>
+           <p>dont have an account?,<a href="customer_register.html">Register</a></p>
+        </form>
+    </div>
+</div>
+  <script>
+  let login_btn=document.getElementById("c_log");
+  login_btn.addEventListener("submit",function(){
+      window.location.href="shoping.html";
+    let get_name=document.getElementById("mail").value;
+    let get_pass=document.getElementById("pass").value;
+    let get_elist=JSON.parse(localStorage.getItem("cust_email"));
+    let get_plist=JSON.parse(localStorage.getItem("cust_pass"));
+    let get_nlist=JSON.parse(localStorage.getItem("cust_name"));
+    for(let i=0;i< get_elist.length;i++){
+      if(get_elist[i]===get_name && get_plist[i]===get_pass){
+        let temp_login="yes";
+        sessionStorage.setItem("log_ref",temp_login);
+        sessionStorage.setItem("index",JSON.stringify(i));
+        alert("Hi"+" "+get_nlist[i]+" "+"login successfull");
+        window.history.back();
+        break;
+    }
+      else{
+        alert("User not found");
+      }
+    }
+  });
+  </script>
+</body>
+</html>
